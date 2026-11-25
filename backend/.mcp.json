@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "disabled": true,
+      "description": "GitHub integration — set GITHUB_TOKEN env var, then set disabled=false"
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres", "${DATABASE_URL}"],
+      "disabled": true,
+      "description": "PostgreSQL read-only integration — set DATABASE_URL env var, then set disabled=false"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./src",
+        "./tests",
+        "./prisma",
+        "./docs",
+        "./scripts"
+      ],
+      "disabled": false,
+      "description": "Filesystem access to project source files — enabled by default"
+    }
+  }
+}

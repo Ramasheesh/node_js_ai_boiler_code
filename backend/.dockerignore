@@ -1,0 +1,16 @@
+node_modules
+dist
+.env
+.env.*
+!.env.example
+coverage
+.git
+.gitignore
+*.log
+.DS_Store
+prisma/migrations
+README.md
+docs/
+tests/
+.claude/
+worktrees/
